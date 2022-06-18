@@ -1,0 +1,25 @@
+html{
+  overflow-x: hidden;
+  box-sizing: border-box;
+  display: block;
+}
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+
+body{
+  overflow-x: hidden;
+    width:100vw;
+    height:100vh;
+  background-color: #fff;
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 1.3rem;
+    margin:0;
+    padding:0;
+   display: block;
+   
+
+}
