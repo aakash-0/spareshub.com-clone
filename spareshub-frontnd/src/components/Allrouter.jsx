@@ -12,7 +12,9 @@ function Allrouter() {
         <Route path='/products' element={<Products/>}></Route>
         <Route path='/product/product/:id' element={<Product/>}></Route>
         <Route path='/login' element={<Auth/>}></Route>
-        <Route path="/cart" element={<Cart/>}></Route>
+        <Route path="/cart" element={<Cart/>}>
+          
+        </Route>
     </Routes>
   )
 }
