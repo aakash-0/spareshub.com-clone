@@ -44,8 +44,8 @@ function Products() {
   }
   return (
     <Box>
-        <Box  p ="1rem 2rem">
-        <Text fontSize="2xl" >Sort</Text>
+        <Box  p ="1rem 2rem" zIndex={-10}>
+        <Text fontSize="2xl" zIndex={-10} >Sort</Text>
         <Select onChange={handelChange} placeholder='Sort-by-price'>
             <option value='ASC'>low-to-heigh</option>
             <option value='DESC'>high-to-low</option>

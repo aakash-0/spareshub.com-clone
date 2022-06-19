@@ -2,24 +2,40 @@ import React from 'react'
 import "./navebar.css"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faBagShopping} from "@fortawesome/free-solid-svg-icons"
+import { Link } from "react-router-dom"
 function Navebar() {
+const isauth=localStorage.getItem("auth")
+function handelLogout(){
+    localStorage.setItem("Userdata", null);
+    localStorage.setItem("UserToken", null);
+    localStorage.setItem("auth", false);
+}
+console.log(isauth,"auth")
+
   return (
     <div>
         <div className='page-header'>
             <div className='panel wrapper'>
                 <div className='panel header'>
+                <Link to={"/login"}>
                     <ul className='links'>
                         <li className='welcome'>WELCOME TO SPARESHUB.COM</li>
                         <li className='contact'>CONTACT US</li>
                         <li></li>
-                        <li className='sing'>SIGN OUT</li>
-                        <li className='account'>CREATE AN ACCOUNT</li>
+                        {!isauth?
+                         <li className='account'>CREATE AN ACCOUNT</li>:
+                         <li className='account' onClick={handelLogout}>LOGOUT</li> 
+                        }   
                     </ul>
+                    </Link>
                 </div>
             </div>
             <div className='content'>
                     <div className='logo'>
-                        <img src='https://spareshub.com/pub/media/logo/stores/1/200x50xlogo.png.pagespeed.ic.3_mBb67eog.webp'></img>
+                        <Link to={'/'}>
+                            <img src='https://spareshub.com/pub/media/logo/stores/1/200x50xlogo.png.pagespeed.ic.3_mBb67eog.webp'></img>
+                        </Link>
+                        
                     </div>
                     <div className='search'>
                         <input type="text" placeholder="Search entire store here..."></input>
@@ -32,7 +48,9 @@ function Navebar() {
                         </ul>
                     </div>
                     <div className='cart'>
+                        <Link to={`/cart`}>
                     <FontAwesomeIcon style={{color:"blue",height:"40px"}} icon={faBagShopping} />
+                    </Link>
                     </div>
             </div>
             <div className='menu'>
@@ -43,7 +61,10 @@ function Navebar() {
                             <div className='row'>
                                 <div className='left-block'>
                                     <div className='imag-box'>
+                                        <Link to={"/"}>
                                         <img src="https://spareshub.com/pub/media/wysiwyg/xbrandnav.png.pagespeed.ic.66n8dmBy5h.webp" alt="" />
+                                        </Link>
+                                        
                                     </div>
                                     <br />
                                     <br />
@@ -51,7 +72,9 @@ function Navebar() {
                                     <p>Get replacement parts for any car brand and model at SparesHub.com...</p>
                                 </div>
                                 <div className='right-block'>
+                                <Link to="/products">
                                     <ul>
+                                        
                                         <li>AUDI</li>
                                         <li>BMW</li>
                                         <li>CHEVERLOET</li>
@@ -80,7 +103,9 @@ function Navebar() {
                                         <li>VOLKSWAGAN</li>
                                         <li>VOLVO</li>
                                         <li>ALL</li>
+                                       
                                     </ul>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -98,6 +123,7 @@ function Navebar() {
                                     <p>Get replacement parts for any car brand and model at SparesHub.com...</p>
                                 </div>
                                 <div className='right-block'>
+                                <Link to="/products">
                                     <ul>
                                         <li>BUSHES</li>
                                         <li>BELTS</li>
@@ -117,6 +143,7 @@ function Navebar() {
                                         <li>TURBOCHARGE</li>
                                         <li>UNKNOWN</li>
                                     </ul>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -125,6 +152,7 @@ function Navebar() {
                     <div className='sub-manu-1'>
                             <div className='row'>
                                 <div className='right-block'>
+                                <Link to="/products">
                                     <ul>
                                         <li>BRAVO</li>
                                         <li>BANCO</li>
@@ -155,6 +183,7 @@ function Navebar() {
                                         <li>VOLVO</li>
                                         <li>ALL</li>
                                     </ul>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

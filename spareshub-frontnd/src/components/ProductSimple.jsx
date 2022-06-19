@@ -22,7 +22,7 @@ import {
           boxShadow={'2xl'}
           rounded={'lg'}
           pos={'relative'}
-          zIndex={1}>
+          zIndex={-2}>
           <Box
             rounded={'lg'}
             mt={-12}
@@ -38,7 +38,7 @@ import {
               left: 0,
               backgroundImage: `url(${image})`,
               filter: 'blur(15px)',
-              zIndex: -1,
+              zIndex: -5,
             }}
             _groupHover={{
               _after: {

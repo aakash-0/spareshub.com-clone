@@ -8,7 +8,7 @@ import axios from "axios";
 import {Provider} from "react-redux"
 import {store} from "./redux/store"
 
-axios.defaults.baseURL = "http://localhost:3003"
+axios.defaults.baseURL = "https://spareshub-clon.herokuapp.com/"
 axios.defaults.headers.post["Content-Type"]="application/json"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

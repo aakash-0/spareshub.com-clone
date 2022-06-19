@@ -1,0 +1,119 @@
+#checkout_content{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    /* border: 1px solid red; */
+    padding: 20px;
+    justify-content: space-between;
+}
+#checkout_content h5{
+    margin: 3px;
+}
+.checkout_userdetails{
+    width: 60%;
+    padding: 2.5%;
+    /* border: 1px solid blue; */
+    text-align: left;
+}
+.checkout_productdetails{
+    width: 35%;
+    padding: 10px;
+    /* border: 1px solid green; */
+    text-align: left;
+}
+#checkout_content p{
+    font-size: 15px;
+}
+.check_username{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+.checkout_userdetails form input{
+    padding: 12px ;
+    border: 1.5px solid black;
+    margin:1% 0px;
+}
+
+.check_username>input{
+    width: 48%;
+}
+.zip_city_state{
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+}
+.zip_city_state>input{
+    width: 30%;
+}
+.apply_btn{
+    background-color: black;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px;
+    color: white;
+}
+.shipping_address{
+    margin: 1px;
+}
+
+.payment_cards_pic{
+    width:40%;
+    display:flex; 
+    justify-content:space-between; 
+    padding:8px
+}
+.flex_table{
+    display: flex;
+    font-size: 12px;
+    /* border:1px solid green; */
+    padding: 0px;
+    /* justify-content: space-evenly; */
+}
+.flex_table b{
+    font-size: 12px;
+}
+.flex_table>div:nth-child(1){
+    width: 84%;
+    padding: 5px;
+    /* border: 1px solid red; */
+}
+.flex_table>div:nth-child(2),.flex_table>div:nth-child(3){
+    padding: 3%;
+    width: 8%;
+    /* border: 1px solid red; */
+    align-items: center;
+}
+.image_name{
+    /* width: 100%; */
+    display: flex;
+    justify-content:space-evenly;
+}
+#subtotal{
+    display: flex;
+    justify-content: space-between;
+}
+.image_name>img{
+    height: 100px;
+    width: 200px;
+}
+.image_name>div{
+    width: 50%;
+}
+
+@media only screen and (max-width: 1000px) {
+    #checkout_content {
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    .checkout_userdetails {
+        width: 100%;
+        text-align: left;
+    }
+    .checkout_productdetails {
+        width: 100%;
+        text-align: left;
+    }
+}

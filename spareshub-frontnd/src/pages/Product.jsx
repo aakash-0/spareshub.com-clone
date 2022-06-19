@@ -24,12 +24,14 @@ import { MdLocalShipping } from 'react-icons/md';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, getSingleProduct } from '../redux/products/action';
+import { useNavigate} from "react-router-dom";
 
 export default function Product() {
   const {id} = useParams();
   const dispatch = useDispatch();
   const currentProduct = useSelector(store=>store.ecommmerceData.currentProduct)
   const loading = useSelector(store=>store.ecommmerceData.loading)
+  const navigate = useNavigate();
   console.log(currentProduct)
   useEffect(()=>{
     if(id){
@@ -38,8 +40,15 @@ export default function Product() {
   },[dispatch,id])
 
   function addtocart(){
+   
+    let auth = JSON.parse(localStorage.getItem("auth"));
+    if(auth){
     let token = JSON.parse(localStorage.getItem("UserToken"));
     dispatch(addToCart({id,token}))
+    }
+    else{
+      navigate("/login")
+    }
   }
   return (
     <>{loading?<Box>loading...</Box>:

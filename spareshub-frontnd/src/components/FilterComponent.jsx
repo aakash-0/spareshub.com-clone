@@ -3,9 +3,9 @@ import React from 'react'
 
 function FilterComponent() {
   return (
-    <Box>
-        <Text fontSize="2xl" >Sort</Text>
-        <Select placeholder='Sort-by-price'>
+    <Box zIndex={-5}>
+        <Text fontSize="2xl" zIndex={-5}>Sort</Text>
+        <Select placeholder='Sort-by-price' zIndex={-2}>
             <option value='ASC'>ascending</option>
             <option value='DESC'>descending</option>
         </Select>

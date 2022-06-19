@@ -32,12 +32,13 @@ export const Auth = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3003/register", userData)
+      .post("https://spareshub-clon.herokuapp.com/register", userData)
       .then(function (response) {
         localStorage.setItem("Userdata", JSON.stringify(response.data.user));
         localStorage.setItem("UserToken", JSON.stringify(response.data.token));
+        localStorage.setItem("auth", true);
         // dispatch(userLogin(response.data.user));
-        // navigate("/");
+        navigate("/");
       })
       .catch(function (error) {
         if (error.response.data) {
@@ -57,12 +58,13 @@ export const Auth = () => {
   const loginSuccess = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3003/login", login)
+      .post("https://spareshub-clon.herokuapp.com/login", login)
       .then((res) => {
         localStorage.setItem("Userdata", JSON.stringify(res.data.user));
         localStorage.setItem("UserToken", JSON.stringify(res.data.token));
+        localStorage.setItem("auth", true);
         // dispatch(userLogin(res.data.user));
-        // navigate("/");
+        navigate("/");
       });
   };
   return (
