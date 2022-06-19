@@ -76,7 +76,7 @@ const addDataFailure = (payload)=>{
 
 const addToCart = ({id,token})=>(dispatch)=>{
     dispatch(addDataRequest())
-    fetch(`http://localhost:3003/cart/add/${id}`, {
+    fetch(`https://spareshub-clon.herokuapp.com/cart/add/${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
